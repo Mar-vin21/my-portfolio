@@ -1,0 +1,42 @@
+﻿MARK VINCENT PABILLON
+Frontend Developer | IT Student
+
+markvincentpabillon004@gmail.com | 0994 267 721
+GitHub: github.com/Mar-vin21 | Facebook: facebook.com/markvincent.pabillon
+
+PROFESSIONAL SUMMARY
+Frontend-focused development student with experience building responsive and user-centric 
+web interfaces. Skilled in modern frontend tools and basic backend integration, with a solid 
+understanding of APIs and data handling. Driven by clean code practices, usability, and 
+continuous learning.
+
+TECHNICAL SKILLS
+Languages: JavaScript, HTML5, CSS3, SQL
+Frontend: HTML5, CSS3, Tailwind CSS, Bootstrap, Responsive Design
+Backend: Node.js, MongoDB, MySQL
+Tools: Git, GitHub, VS Code
+
+FEATURED PROJECTS
+NorthPoint Fitness Gym (PHP, MySQL, Tailwind, Bootstrap)
+A centralized web-based gym management system that streamlines member records, membership 
+plans, payments, and attendance through a unified administrative dashboard.
+Live Demo: https://northpointfitnessgym.online
+
+CTU Marketplace (PHP, MySQL, Tailwind, Bootstrap)
+A web-based e-commerce marketplace for managing products, orders, users, and payments.
+Live Demo: https://dbmarketplace.free.nf
+
+EDUCATION
+Bachelor of Science in Information Technology
+Cebu Technological University - Daanbantayan Campus
+Graduating: 2026
+
+SOFT SKILLS
+- UI/UX Evaluation & Suggestions
+- Leadership & Team Coordination
+- Graphic Editing using Templates (Canva, Microsoft Office)
+- Microsoft Office (Word, Excel, PowerPoint)
+- Flowchart & Diagram Creation
+- System Testing and Feedback
+- Writing and Organizing Technical Content
+- Quick Learner
