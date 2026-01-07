@@ -1,0 +1,19 @@
+/* ================================
+   Tailwind CSS Configuration
+   ================================ */
+
+/* This file demonstrates how Tailwind CSS is integrated via CDN
+   Tailwind utilities are available through the CDN link in index.html
+   
+   Key Tailwind Classes Used:
+   - Spacing: mb-3, mt-4, px-5, py-5, gap-3
+   - Colors: bg-light, text-dark, text-gray-700, text-muted
+   - Responsive: col-lg-6, col-md-12, container-fluid
+   - Display: d-flex, flex-wrap, text-center
+   - Typography: fw-bold, h1, h5, small
+   
+   Tailwind customization can be extended via @tailwind directives
+   if moving to a build process instead of CDN.
+*/
+
+/* Note: All actual Tailwind styling is handled via CDN */
