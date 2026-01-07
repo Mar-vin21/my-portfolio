@@ -3,10 +3,35 @@
 // ================================
 
 document.addEventListener('DOMContentLoaded', function() {
+    initAOS();
     initSmoothScroll();
     initNavbarScroll();
     initFormValidation();
     initNavbarActiveLink();
+});
+
+// ================================
+// AOS (Animate On Scroll) Initialization
+// ================================
+
+function initAOS() {
+    if (typeof AOS !== 'undefined') {
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: false,
+            mirror: false,
+            offset: 100,
+            delay: 0
+        });
+    }
+}
+
+// Refresh AOS on window resize
+window.addEventListener('resize', function() {
+    if (typeof AOS !== 'undefined') {
+        AOS.refresh();
+    }
 });
 
 // ================================
@@ -35,11 +60,13 @@ function initSmoothScroll() {
                         behavior: 'smooth'
                     });
                     
-                    // Close mobile navbar if open
+                    // Close mobile navbar if open using Bootstrap Collapse API
                     const navbarCollapse = document.querySelector('.navbar-collapse');
                     if (navbarCollapse && navbarCollapse.classList.contains('show')) {
-                        const navbarToggler = document.querySelector('.navbar-toggler');
-                        navbarToggler.click();
+                        const collapseInstance = bootstrap.Collapse.getInstance(navbarCollapse);
+                        if (collapseInstance) {
+                            collapseInstance.hide();
+                        }
                     }
                 }
             }
@@ -269,20 +296,20 @@ if (document.readyState === 'loading') {
 // ================================
 
 document.addEventListener('DOMContentLoaded', function() {
-    const navbarToggler = document.querySelector('.navbar-toggler');
     const navbarCollapse = document.querySelector('.navbar-collapse');
     
-    if (navbarToggler) {
-        navbarToggler.addEventListener('click', function() {
-            navbarCollapse.classList.toggle('show');
-        });
-    }
-    
-    // Close menu when clicking outside
+    // Close menu when clicking outside navbar
     document.addEventListener('click', function(event) {
-        if (!event.target.closest('.navbar')) {
-            if (navbarCollapse && navbarCollapse.classList.contains('show')) {
-                navbarToggler.click();
+        if (!event.target.closest('.navbar') && navbarCollapse) {
+            if (navbarCollapse.classList.contains('show')) {
+                // Use Bootstrap Collapse API to properly hide the menu
+                const collapseInstance = bootstrap.Collapse.getInstance(navbarCollapse);
+                if (collapseInstance) {
+                    collapseInstance.hide();
+                } else {
+                    // Fallback if instance doesn't exist yet
+                    navbarCollapse.classList.remove('show');
+                }
             }
         }
     });

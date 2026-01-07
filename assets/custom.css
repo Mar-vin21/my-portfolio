@@ -55,11 +55,13 @@ body {
 
 .navbar {
     border-bottom: 1px solid var(--border-color);
-    transition: var(--transition);
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: var(--white);
 }
 
 .navbar.scrolled {
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    background-color: rgba(255, 255, 255, 0.98);
 }
 
 .navbar-brand {
@@ -78,8 +80,10 @@ body {
     margin-left: 1.5rem;
     font-weight: 500;
     color: var(--dark-gray) !important;
-    transition: var(--transition);
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
+    font-size: 0.95rem;
+    letter-spacing: 0.3px;
 }
 
 .nav-link:hover,
@@ -117,10 +121,11 @@ body {
 
 .hero-content h1 {
     font-size: 3.5rem;
-    font-weight: 700;
-    letter-spacing: -1px;
-    line-height: 1.2;
+    font-weight: 800;
+    letter-spacing: -1.2px;
+    line-height: 1.15;
     margin-bottom: 1rem;
+    color: var(--dark-gray);
     animation: fadeInUp 0.8s ease;
 }
 
@@ -143,16 +148,23 @@ body {
     border-color: var(--primary-color);
     color: white;
     font-weight: 600;
-    transition: var(--transition);
+    letter-spacing: 0.5px;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
     padding: 0.75rem 2rem;
-    border-radius: 4px;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0, 102, 204, 0.15);
 }
 
 .btn-primary:hover {
     background-color: var(--primary-hover);
     border-color: var(--primary-hover);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 102, 204, 0.3);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 102, 204, 0.25);
+}
+
+.btn-primary:active {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 102, 204, 0.2);
 }
 
 .btn-outline-primary {
@@ -160,13 +172,20 @@ body {
     border-color: var(--primary-color);
     border-width: 2px;
     font-weight: 600;
-    transition: var(--transition);
+    letter-spacing: 0.5px;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: transparent;
 }
 
 .btn-outline-primary:hover {
     background-color: var(--primary-color);
     color: white;
-    transform: translateY(-2px);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 102, 204, 0.25);
+}
+
+.btn-outline-primary:active {
+    transform: translateY(-1px);
 }
 
 .btn-lg {
@@ -182,6 +201,20 @@ body {
     background-color: var(--light-gray);
     border-radius: 8px;
     animation: fadeInScale 0.8s ease 0.3s backwards;
+}
+
+.profile-image-wrapper {
+    animation: fadeInScale 0.8s ease 0.3s backwards;
+}
+
+.profile-image-wrapper img {
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.profile-image-wrapper:hover img {
+    box-shadow: 0 12px 28px rgba(0, 102, 204, 0.2);
+    transform: translateY(-4px);
 }
 
 @keyframes fadeInUp {
@@ -206,19 +239,31 @@ body {
     }
 }
 
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
 /* ================================
    Section Headers
    ================================ */
 
 .section-header h2 {
     font-size: 2.5rem;
-    font-weight: 700;
-    letter-spacing: -0.5px;
+    font-weight: 800;
+    letter-spacing: -0.6px;
+    color: var(--dark-gray);
+    margin-bottom: 0.5rem;
 }
 
 .section-header p {
     font-size: 1.125rem;
     color: var(--medium-gray);
+    line-height: 1.6;
 }
 
 /* ================================
@@ -226,8 +271,8 @@ body {
    ================================ */
 
 #projects {
-    padding-top: 6rem;
-    padding-bottom: 6rem;
+    padding-top: 6.5rem;
+    padding-bottom: 6.5rem;
 }
 
 .project-card {
@@ -235,13 +280,16 @@ body {
     flex-direction: column;
     height: 100%;
     border: 1px solid var(--border-color);
-    transition: var(--transition);
+    border-radius: 8px;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
     overflow: hidden;
+    background-color: white;
 }
 
 .project-card:hover {
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
-    transform: translateY(-4px);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12);
+    transform: translateY(-6px);
+    border-color: var(--primary-color);
 }
 
 .project-image {
@@ -250,7 +298,7 @@ body {
     align-items: center;
     justify-content: center;
     background-color: var(--light-gray);
-    transition: var(--transition);
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .project-card:hover .project-image {
@@ -273,12 +321,15 @@ body {
     color: var(--dark-gray);
     border: 1px solid var(--border-color);
     display: inline-block;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .badge:hover {
     background-color: var(--primary-color);
     color: white;
     border-color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 102, 204, 0.2);
 }
 
 .transition-hover {
@@ -290,8 +341,8 @@ body {
    ================================ */
 
 #about {
-    padding-top: 6rem;
-    padding-bottom: 6rem;
+    padding-top: 6.5rem;
+    padding-bottom: 6.5rem;
 }
 
 .stat-card {
@@ -299,13 +350,16 @@ body {
     border-radius: 8px;
     padding: 2rem 1.5rem;
     text-align: center;
-    transition: var(--transition);
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
+    border: 1px solid rgba(0, 102, 204, 0.1);
 }
 
 .stat-card:hover {
-    background-color: var(--primary-color);
+    background: linear-gradient(135deg, var(--primary-color) 0%, #0052a3 100%);
     color: white;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 102, 204, 0.2);
 }
 
 .stat-card:hover h3,
@@ -315,7 +369,12 @@ body {
 
 .stat-card h3 {
     color: var(--primary-color);
-    transition: var(--transition);
+    transition: color 0.35s ease;
+    font-weight: 700;
+}
+
+.stat-card p {
+    font-weight: 500;
 }
 
 /* ================================
@@ -323,8 +382,8 @@ body {
    ================================ */
 
 #skills {
-    padding-top: 6rem;
-    padding-bottom: 6rem;
+    padding-top: 6.5rem;
+    padding-bottom: 6.5rem;
 }
 
 .skill-category {
@@ -332,32 +391,36 @@ body {
     padding: 2rem;
     border-radius: 8px;
     border: 1px solid var(--border-color);
-    transition: var(--transition);
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .skill-category:hover {
     border-color: var(--primary-color);
-    box-shadow: 0 4px 12px rgba(0, 102, 204, 0.1);
+    box-shadow: 0 12px 24px rgba(0, 102, 204, 0.15);
+    transform: translateY(-2px);
 }
 
 .skill-badge {
     display: inline-block;
     background-color: var(--light-gray);
     color: var(--dark-gray);
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
+    padding: 0.6rem 1.2rem;
+    border-radius: 5px;
     font-size: 0.9rem;
     font-weight: 500;
     border: 1px solid var(--border-color);
-    transition: var(--transition);
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
     margin-bottom: 0.5rem;
+    cursor: default;
 }
 
 .skill-badge:hover {
     background-color: var(--primary-color);
     color: white;
     border-color: var(--primary-color);
-    transform: translateY(-2px);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 102, 204, 0.2);
 }
 
 /* ================================
@@ -365,8 +428,8 @@ body {
    ================================ */
 
 #contact {
-    padding-top: 6rem;
-    padding-bottom: 6rem;
+    padding-top: 6.5rem;
+    padding-bottom: 6.5rem;
 }
 
 .contact-form {
@@ -376,15 +439,22 @@ body {
 .form-control,
 .form-control:focus {
     border: 1px solid var(--border-color);
-    border-radius: 4px;
-    padding: 0.75rem 1rem;
+    border-radius: 5px;
+    padding: 0.875rem 1rem;
     font-size: 1rem;
-    transition: var(--transition);
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    line-height: 1.6;
 }
 
 .form-control:focus {
     border-color: var(--primary-color);
-    box-shadow: 0 0 0 0.2rem rgba(0, 102, 204, 0.15);
+    box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
+    outline: none;
+}
+
+.form-control::placeholder {
+    color: var(--medium-gray);
+    opacity: 0.7;
 }
 
 .form-label {
@@ -401,23 +471,25 @@ body {
     color: var(--primary-color);
     text-decoration: none;
     font-weight: 500;
-    transition: var(--transition);
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
     display: inline-block;
+    padding: 0.5rem 0;
 }
 
 .social-link:hover {
     color: var(--primary-hover);
-    transform: translateY(-2px);
+    transform: translateY(-3px);
 }
 
 .social-link i {
-    margin-right: 0.5rem;
+    margin-right: 0.75rem;
 }
 
 .alert {
-    border-radius: 4px;
+    border-radius: 5px;
     background-color: #f0f4f8;
     border-color: var(--border-color);
+    animation: fadeIn 0.5s ease;
 }
 
 /* ================================
@@ -425,8 +497,8 @@ body {
    ================================ */
 
 #resume {
-    padding-top: 6rem;
-    padding-bottom: 6rem;
+    padding-top: 6.5rem;
+    padding-bottom: 6.5rem;
 }
 
 .resume-section {
@@ -435,12 +507,14 @@ body {
     border-radius: 8px;
     border: 1px solid var(--border-color);
     margin-bottom: 2rem;
-    transition: var(--transition);
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .resume-section:hover {
     border-color: var(--primary-color);
-    box-shadow: 0 4px 12px rgba(0, 102, 204, 0.1);
+    box-shadow: 0 12px 24px rgba(0, 102, 204, 0.15);
+    transform: translateY(-2px);
 }
 
 .resume-section h3 {
@@ -477,11 +551,13 @@ footer {
 }
 
 footer a {
-    transition: var(--transition);
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-block;
 }
 
 footer a:hover {
     color: var(--primary-color) !important;
+    transform: translateX(2px);
 }
 
 footer h5 {
